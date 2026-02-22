@@ -1,0 +1,129 @@
+schema_id: http_www.mf.gov.pl_schematy_sf_definicjetypysprawozdaniafinansowe_2025_01_01_jednostkainnawtysiacach
+unit: PLN_thousands
+required_metrics:
+  - bs_assets_total
+  - bs_equity
+  - bs_liabilities_total
+  - bs_current_assets
+  - bs_current_liabilities
+  - pl_revenue
+  - pl_gross_profit
+  - pl_ebit
+  - pl_net_profit
+metrics:
+  # Balance Sheet metrics
+  - key: bs_assets_total
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+    required: true
+  - key: bs_equity
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/KwotaA
+      - Bilans/Pasywa/KapitalWlasny/KwotaA
+    required: true
+  - key: bs_liabilities_total
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/KwotaA
+      - Bilans/Pasywa/Zobowiazania/KwotaA
+    required: true
+  - key: bs_current_assets
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/KwotaA
+      - Bilans/Aktywa/AktywaObrotowe/KwotaA
+    required: true
+  - key: bs_current_liabilities
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+      - Bilans/Pasywa/ZobowiazaniaKrotkoterminowe/KwotaA
+    required: true
+  - key: bs_fixed_assets
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/KwotaA
+      - Bilans/Aktywa/AktywaTrwale/KwotaA
+    required: false
+  - key: bs_inventory
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/KwotaA
+      - Bilans/Aktywa/AktywaObrotowe/Zapasy/KwotaA
+    required: false
+  - key: bs_accounts_receivable
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/KwotaA
+      - Bilans/Aktywa/AktywaObrotowe/Naleznosci/KwotaA
+    required: false
+  - key: bs_cash
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/KwotaA
+      - Bilans/Aktywa/AktywaObrotowe/SrodkiPieniezne/KwotaA
+    required: false
+  - key: bs_debt_total
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_II/KwotaA
+      - Bilans/Pasywa/ZobowiazaniaDlugoterminowe/KwotaA
+    required: false
+  # P&L metrics - supports both RZiSKalk (kalkulacyjny) and RZiSPor (porównawczy) formats
+  - key: pl_revenue
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+      - RZiS/RZiSPor/A/KwotaA
+    required: true
+  - key: pl_cogs
+    xpaths:
+      - RZiS/RZiSKalk/B/KwotaA
+      - RZiS/RZiSPor/B/KwotaA
+    required: false
+  - key: pl_gross_profit
+    xpaths:
+      - RZiS/RZiSKalk/C/KwotaA
+      - RZiS/RZiSPor/C/KwotaA
+    required: true
+  - key: pl_operating_expenses
+    xpaths:
+      - RZiS/RZiSKalk/D/KwotaA
+      - RZiS/RZiSPor/D/KwotaA
+    required: false
+  - key: pl_other_operating_income
+    xpaths:
+      - RZiS/RZiSKalk/E/KwotaA
+      - RZiS/RZiSPor/D/KwotaA
+    required: false
+  - key: pl_other_operating_expenses
+    xpaths:
+      - RZiS/RZiSKalk/F/KwotaA
+      - RZiS/RZiSPor/E/KwotaA
+    required: false
+  - key: pl_ebit
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+      - RZiS/RZiSPor/F/KwotaA
+    required: true
+  - key: pl_financial_income
+    xpaths:
+      - RZiS/RZiSKalk/J/KwotaA
+      - RZiS/RZiSPor/G/KwotaA
+    required: false
+  - key: pl_financial_expenses
+    xpaths:
+      - RZiS/RZiSKalk/K/KwotaA
+      - RZiS/RZiSPor/H/KwotaA
+    required: false
+  - key: pl_interest_expense
+    xpaths:
+      - RZiS/RZiSKalk/K/K_I/KwotaA
+      - RZiS/RZiSPor/H/H_I/KwotaA
+    required: false
+  - key: pl_gross_profit_before_tax
+    xpaths:
+      - RZiS/RZiSKalk/L/KwotaA
+      - RZiS/RZiSPor/I/KwotaA
+    required: false
+  - key: pl_income_tax
+    xpaths:
+      - RZiS/RZiSKalk/M/KwotaA
+      - RZiS/RZiSPor/J/KwotaA
+    required: false
+  - key: pl_net_profit
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+      - RZiS/RZiSPor/L/KwotaA
+    required: true

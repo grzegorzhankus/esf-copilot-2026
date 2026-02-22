@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esf:FinancialStatement xmlns:esf="http://example.com/esf/2026">
+  <esf:EntityId>DEMO-001</esf:EntityId>
+</esf:FinancialStatement>

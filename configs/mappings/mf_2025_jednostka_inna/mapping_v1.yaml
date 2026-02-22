@@ -1,0 +1,44 @@
+version: v1
+schema_id: http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaInna
+unit: PLN
+metrics:
+  bs_total_assets:
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+    transform: first
+    sign_rule: none
+  bs_equity_total:
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/KwotaA
+    transform: first
+    sign_rule: none
+  bs_total_liabilities:
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/KwotaA
+    transform: first
+    sign_rule: none
+  pl_revenue:
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+    transform: first
+    sign_rule: none
+  pl_ebit:
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+    transform: first
+    sign_rule: none
+  pl_net_income:
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+    transform: first
+    sign_rule: none
+  cf_net_cash_from_operations:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaA
+    transform: first
+    sign_rule: none
+  cf_net_change_in_cash:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaA
+    transform: first
+    sign_rule: none

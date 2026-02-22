@@ -1,0 +1,191 @@
+schema_id: _default
+unit: PLN
+# Default fallback mapping with common XPath patterns for Polish financial statements
+required_metrics:
+  - bs_assets_total
+  - bs_equity
+  - bs_liabilities_total
+  - bs_current_assets
+  - bs_current_liabilities
+  - pl_revenue
+  - pl_gross_profit
+  - pl_ebit
+  - pl_net_profit
+metrics:
+  - key: bs_assets_total
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+      - BilansJednostkaMala/Aktywa/KwotaA
+      - BilansJednostkaInna/Aktywa/KwotaA
+    required: true
+  - key: bs_equity
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/KwotaA
+      - Bilans/Pasywa/KapitalWlasny/KwotaA
+      - BilansJednostkaMala/Pasywa/Pasywa_A/KwotaA
+      - BilansJednostkaInna/Pasywa/Pasywa_A/KwotaA
+    required: true
+  - key: bs_liabilities_total
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/KwotaA
+      - Bilans/Pasywa/Zobowiazania/KwotaA
+      - BilansJednostkaMala/Pasywa/Pasywa_B/KwotaA
+      - BilansJednostkaInna/Pasywa/Pasywa_B/KwotaA
+    required: true
+  - key: bs_current_assets
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/KwotaA
+      - Bilans/Aktywa/AktywaObrotowe/KwotaA
+      - BilansJednostkaMala/Aktywa/Aktywa_B/KwotaA
+      - BilansJednostkaInna/Aktywa/Aktywa_B/KwotaA
+    required: true
+  - key: bs_current_liabilities
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+      - Bilans/Pasywa/ZobowiazaniaKrotkoterminowe/KwotaA
+      - BilansJednostkaMala/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+      - BilansJednostkaInna/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+    required: true
+  - key: bs_fixed_assets
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/KwotaA
+      - Bilans/Aktywa/AktywaTrwale/KwotaA
+    required: false
+  - key: bs_inventory
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/KwotaA
+    required: false
+  - key: bs_accounts_receivable
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/KwotaA
+    required: false
+  - key: bs_cash
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/KwotaA
+    required: false
+  - key: bs_debt_total
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_II/KwotaA
+    required: false
+  - key: pl_revenue
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+      - RZiSJednostkaMala/RZiSKalk/A/KwotaA
+      - RZiSJednostkaInna/RZiSKalk/A/KwotaA
+    required: true
+  - key: pl_cogs
+    xpaths:
+      - RZiS/RZiSKalk/B/KwotaA
+    required: false
+  - key: pl_gross_profit
+    xpaths:
+      - RZiS/RZiSKalk/C/KwotaA
+      - RZiSJednostkaMala/RZiSKalk/C/KwotaA
+      - RZiSJednostkaInna/RZiSKalk/C/KwotaA
+    required: true
+  - key: pl_operating_expenses
+    xpaths:
+      - RZiS/RZiSKalk/D/KwotaA
+    required: false
+  - key: pl_ebit
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+      - RZiSJednostkaMala/RZiSKalk/I/KwotaA
+      - RZiSJednostkaInna/RZiSKalk/I/KwotaA
+    required: true
+  - key: pl_financial_income
+    xpaths:
+      - RZiS/RZiSKalk/J/KwotaA
+    required: false
+  - key: pl_financial_expenses
+    xpaths:
+      - RZiS/RZiSKalk/K/KwotaA
+    required: false
+  - key: pl_gross_profit_before_tax
+    xpaths:
+      - RZiS/RZiSKalk/L/KwotaA
+    required: false
+  - key: pl_income_tax
+    xpaths:
+      - RZiS/RZiSKalk/M/KwotaA
+    required: false
+  - key: pl_net_profit
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+      - RZiSJednostkaMala/RZiSKalk/O/KwotaA
+      - RZiSJednostkaInna/RZiSKalk/O/KwotaA
+    required: true
+  - key: pl_other_operating_income
+    xpaths:
+      - RZiS/RZiSKalk/E/KwotaA
+    required: false
+  - key: pl_other_operating_expenses
+    xpaths:
+      - RZiS/RZiSKalk/F/KwotaA
+    required: false
+  - key: pl_interest_expense
+    xpaths:
+      - RZiS/RZiSKalk/K/K_I/KwotaA
+    required: false
+  # Cash Flow Statement - Operating Activities
+  - key: cf_operating_total
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/A/A_III/KwotaA
+    required: false
+  - key: cf_operating_total_prior
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/A/A_III/KwotaB
+    required: false
+  - key: cf_operating_net_profit
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_I/KwotaA
+    required: false
+  - key: cf_operating_depreciation
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_1/KwotaA
+    required: false
+  # Cash Flow Statement - Investing Activities
+  - key: cf_investing_total
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/B/B_III/KwotaA
+    required: false
+  - key: cf_investing_total_prior
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/B/B_III/KwotaB
+    required: false
+  # Cash Flow Statement - Financing Activities
+  - key: cf_financing_total
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/C/C_III/KwotaA
+    required: false
+  - key: cf_financing_total_prior
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/C/C_III/KwotaB
+    required: false
+  # Cash Flow Statement - Net Change
+  - key: cf_net_change
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/D/KwotaA
+    required: false
+  - key: cf_net_change_prior
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/D/KwotaB
+    required: false
+  - key: cf_opening_balance
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/E/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/E/KwotaA
+    required: false
+  - key: cf_closing_balance
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/F/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/F/KwotaA
+    required: false

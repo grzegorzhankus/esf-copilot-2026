@@ -1,0 +1,48 @@
+schema_id: urn_esf_demo_v1
+required_metrics:
+  - bs_assets_total
+  - bs_equity
+  - bs_liabilities_total
+  - bs_current_assets
+  - bs_current_liabilities
+  - pl_revenue
+  - pl_gross_profit
+  - pl_ebit
+  - pl_net_profit
+metrics:
+  - key: bs_assets_total
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+    required: true
+  - key: bs_equity
+    xpaths:
+      - Bilans/Pasywa/KapitalWlasny/KwotaA
+    required: true
+  - key: bs_liabilities_total
+    xpaths:
+      - Bilans/Pasywa/Zobowiazania/KwotaA
+    required: true
+  - key: bs_current_assets
+    xpaths:
+      - Bilans/Aktywa/AktywaObrotowe/KwotaA
+    required: true
+  - key: bs_current_liabilities
+    xpaths:
+      - Bilans/Pasywa/ZobowiazaniaKrotkoterminowe/KwotaA
+    required: true
+  - key: pl_revenue
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+    required: true
+  - key: pl_gross_profit
+    xpaths:
+      - RZiS/RZiSKalk/C/KwotaA
+    required: true
+  - key: pl_ebit
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+    required: true
+  - key: pl_net_profit
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+    required: true

@@ -1,0 +1,127 @@
+version: v1
+schema_id: http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaInnaWTysiacach
+unit: PLN_thousands
+metrics:
+  # Balance Sheet
+  bs_total_assets:
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+    transform: first
+    sign_rule: none
+  bs_equity_total:
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/KwotaA
+    transform: first
+    sign_rule: none
+  bs_total_liabilities:
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/KwotaA
+    transform: first
+    sign_rule: none
+  bs_current_assets:
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/KwotaA
+    transform: first
+  bs_current_liabilities:
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+    transform: first
+  bs_inventory:
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/KwotaA
+    transform: first
+  bs_accounts_receivable:
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/KwotaA
+    transform: first
+  bs_cash:
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/KwotaA
+    transform: first
+
+  # P&L
+  pl_revenue:
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+    transform: first
+    sign_rule: none
+  pl_gross_profit:
+    xpaths:
+      - RZiS/RZiSKalk/C/KwotaA
+    transform: first
+  pl_ebit:
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+    transform: first
+    sign_rule: none
+  pl_net_profit:
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+    transform: first
+    sign_rule: none
+
+  # Cash Flow Statement - Operating Activities
+  cf_operating_total:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/A/A_III/KwotaA
+    transform: first
+  cf_operating_total_prior:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/A/A_III/KwotaB
+    transform: first
+  cf_operating_net_profit:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_I/KwotaA
+    transform: first
+  cf_operating_depreciation:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_1/KwotaA
+    transform: first
+
+  # Cash Flow Statement - Investing Activities
+  cf_investing_total:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/B/B_III/KwotaA
+    transform: first
+  cf_investing_total_prior:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/B/B_III/KwotaB
+    transform: first
+
+  # Cash Flow Statement - Financing Activities
+  cf_financing_total:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/C/C_III/KwotaA
+    transform: first
+  cf_financing_total_prior:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_III/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/C/C_III/KwotaB
+    transform: first
+
+  # Cash Flow Statement - Summary
+  cf_net_change:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/D/KwotaA
+    transform: first
+  cf_net_change_prior:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaB
+      - RachPrzeplywow/PrzeplywyBezposr/D/KwotaB
+    transform: first
+  cf_opening_balance:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/E/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/E/KwotaA
+    transform: first
+  cf_closing_balance:
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/F/KwotaA
+      - RachPrzeplywow/PrzeplywyBezposr/F/KwotaA
+    transform: first

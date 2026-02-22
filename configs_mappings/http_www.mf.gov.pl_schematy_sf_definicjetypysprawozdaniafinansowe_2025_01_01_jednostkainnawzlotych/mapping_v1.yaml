@@ -1,0 +1,756 @@
+schema_id: http_www.mf.gov.pl_schematy_sf_definicjetypysprawozdaniafinansowe_2025_01_01_jednostkainnawzlotych
+unit: PLN
+required_metrics:
+  - bs_assets_total
+  - bs_equity
+  - bs_liabilities_total
+  - pl_revenue
+  - pl_net_profit
+metrics:
+  # ============================================
+  # BILANS - AKTYWA (Balance Sheet - Assets)
+  # ============================================
+  - key: bs_assets_total
+    label: "Aktywa razem / Total Assets"
+    xpaths:
+      - Bilans/Aktywa/KwotaA
+    required: true
+
+  # A. AKTYWA TRWAŁE (Non-current Assets)
+  - key: bs_fixed_assets
+    label: "A. Aktywa trwałe / Non-current Assets"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/KwotaA
+    required: false
+
+  # A.I. Wartości niematerialne i prawne (Intangible Assets)
+  - key: bs_intangible_assets
+    label: "A.I. Wartości niematerialne i prawne / Intangible Assets"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_I/KwotaA
+    required: false
+
+  # A.II. Rzeczowe aktywa trwałe (Property, Plant & Equipment)
+  - key: bs_ppe
+    label: "A.II. Rzeczowe aktywa trwałe / Property, Plant & Equipment"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_II/KwotaA
+    required: false
+
+  # A.II.1. Środki trwałe (Fixed Assets)
+  - key: bs_ppe_land_buildings
+    label: "A.II.1. Środki trwałe / Fixed Assets in Use"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_II/Aktywa_A_II_1/KwotaA
+    required: false
+
+  # A.II.2. Środki trwałe w budowie (Assets under Construction)
+  - key: bs_ppe_under_construction
+    label: "A.II.2. Środki trwałe w budowie / Assets under Construction"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_II/Aktywa_A_II_2/KwotaA
+    required: false
+
+  # A.III. Należności długoterminowe (Long-term Receivables)
+  - key: bs_lt_receivables
+    label: "A.III. Należności długoterminowe / Long-term Receivables"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_III/KwotaA
+    required: false
+
+  # A.IV. Inwestycje długoterminowe (Long-term Investments)
+  - key: bs_lt_investments
+    label: "A.IV. Inwestycje długoterminowe / Long-term Investments"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_IV/KwotaA
+    required: false
+
+  # A.V. Długoterminowe rozliczenia międzyokresowe (Long-term Prepayments)
+  - key: bs_lt_prepayments
+    label: "A.V. Długoterminowe rozliczenia międzyokresowe / Long-term Prepayments"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_A/Aktywa_A_V/KwotaA
+    required: false
+
+  # B. AKTYWA OBROTOWE (Current Assets)
+  - key: bs_current_assets
+    label: "B. Aktywa obrotowe / Current Assets"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/KwotaA
+    required: true
+
+  # B.I. Zapasy (Inventories)
+  - key: bs_inventory
+    label: "B.I. Zapasy / Inventories"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/KwotaA
+    required: false
+
+  # B.I.1. Materiały (Materials)
+  - key: bs_inventory_materials
+    label: "B.I.1. Materiały / Materials"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/Aktywa_B_I_1/KwotaA
+    required: false
+
+  # B.I.4. Towary (Goods for Resale)
+  - key: bs_inventory_goods
+    label: "B.I.4. Towary / Goods for Resale"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/Aktywa_B_I_4/KwotaA
+    required: false
+
+  # B.I.5. Zaliczki na dostawy (Advances for Deliveries)
+  - key: bs_inventory_advances
+    label: "B.I.5. Zaliczki na dostawy / Advances for Deliveries"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_I/Aktywa_B_I_5/KwotaA
+    required: false
+
+  # B.II. Należności krótkoterminowe (Short-term Receivables)
+  - key: bs_accounts_receivable
+    label: "B.II. Należności krótkoterminowe / Short-term Receivables"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/KwotaA
+    required: false
+
+  # B.II.1. Należności od jednostek powiązanych (Receivables from Related Parties)
+  - key: bs_receivables_related
+    label: "B.II.1. Należności od jednostek powiązanych / Receivables from Related Parties"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/Aktywa_B_II_1/KwotaA
+    required: false
+
+  # B.II.2. Należności od pozostałych jednostek (Receivables from Other Entities)
+  - key: bs_receivables_other_entities
+    label: "B.II.2. Należności od pozostałych jednostek / Receivables from Other Entities"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/Aktywa_B_II_2/KwotaA
+    required: false
+
+  # B.II.3. Należności od pozostałych jednostek (Other Short-term Receivables)
+  - key: bs_receivables_other
+    label: "B.II.3. Należności od pozostałych jednostek / Other Short-term Receivables"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_II/Aktywa_B_II_3/KwotaA
+    required: false
+
+  # B.III. Inwestycje krótkoterminowe (Short-term Investments)
+  - key: bs_st_investments
+    label: "B.III. Inwestycje krótkoterminowe / Short-term Investments"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/KwotaA
+    required: false
+
+  # B.III.1.c. Środki pieniężne i inne aktywa pieniężne (Cash and Cash Equivalents)
+  - key: bs_cash
+    label: "B.III.1.c. Środki pieniężne / Cash and Cash Equivalents"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/Aktywa_B_III_1/KwotaA
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_III/Aktywa_B_III_1/Aktywa_B_III_1_C/KwotaA
+    required: false
+
+  # B.IV. Krótkoterminowe rozliczenia międzyokresowe (Short-term Prepayments)
+  - key: bs_st_prepayments
+    label: "B.IV. Krótkoterminowe rozliczenia międzyokresowe / Short-term Prepayments"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_B/Aktywa_B_IV/KwotaA
+    required: false
+
+  # C. Należne wpłaty na kapitał (Called Up Share Capital)
+  - key: bs_called_up_capital
+    label: "C. Należne wpłaty na kapitał / Called Up Share Capital"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_C/KwotaA
+    required: false
+
+  # D. Udziały (akcje) własne (Own Shares)
+  - key: bs_own_shares
+    label: "D. Udziały (akcje) własne / Own Shares"
+    xpaths:
+      - Bilans/Aktywa/Aktywa_D/KwotaA
+    required: false
+
+  # ============================================
+  # BILANS - PASYWA (Balance Sheet - Liabilities & Equity)
+  # ============================================
+  - key: bs_liabilities_equity_total
+    label: "Pasywa razem / Total Liabilities & Equity"
+    xpaths:
+      - Bilans/Pasywa/KwotaA
+    required: false
+
+  # A. KAPITAŁ WŁASNY (Equity)
+  - key: bs_equity
+    label: "A. Kapitał własny / Equity"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/KwotaA
+    required: true
+
+  # A.I. Kapitał zakładowy (Share Capital)
+  - key: bs_share_capital
+    label: "A.I. Kapitał zakładowy / Share Capital"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_I/KwotaA
+    required: false
+
+  # A.II. Kapitał zapasowy (Supplementary Capital)
+  - key: bs_supplementary_capital
+    label: "A.II. Kapitał zapasowy / Supplementary Capital"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_II/KwotaA
+    required: false
+
+  # A.III. Kapitał z aktualizacji wyceny (Revaluation Reserve)
+  - key: bs_revaluation_reserve
+    label: "A.III. Kapitał z aktualizacji wyceny / Revaluation Reserve"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_III/KwotaA
+    required: false
+
+  # A.IV. Pozostałe kapitały rezerwowe (Other Reserve Capital)
+  - key: bs_other_reserves
+    label: "A.IV. Pozostałe kapitały rezerwowe / Other Reserve Capital"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_IV/KwotaA
+    required: false
+
+  # A.V. Zysk (strata) z lat ubiegłych (Retained Earnings)
+  - key: bs_retained_earnings
+    label: "A.V. Zysk (strata) z lat ubiegłych / Retained Earnings"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_V/KwotaA
+    required: false
+
+  # A.VI. Zysk (strata) netto (Net Profit/Loss)
+  - key: bs_net_profit_loss
+    label: "A.VI. Zysk (strata) netto / Net Profit/Loss"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_VI/KwotaA
+    required: false
+
+  # A.VII. Odpisy z zysku netto (Appropriations from Net Profit)
+  - key: bs_profit_appropriations
+    label: "A.VII. Odpisy z zysku netto / Appropriations from Net Profit"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_A/Pasywa_A_VII/KwotaA
+    required: false
+
+  # B. ZOBOWIĄZANIA I REZERWY (Liabilities and Provisions)
+  - key: bs_liabilities_total
+    label: "B. Zobowiązania i rezerwy / Liabilities and Provisions"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/KwotaA
+    required: true
+
+  # B.I. Rezerwy na zobowiązania (Provisions)
+  - key: bs_provisions
+    label: "B.I. Rezerwy na zobowiązania / Provisions"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_I/KwotaA
+    required: false
+
+  # B.I.1. Rezerwa z tytułu odroczonego podatku dochodowego (Deferred Tax Provision)
+  - key: bs_deferred_tax_provision
+    label: "B.I.1. Rezerwa z tyt. odroczonego podatku / Deferred Tax Provision"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_I/Pasywa_B_I_1/KwotaA
+    required: false
+
+  # B.I.2. Rezerwa na świadczenia emerytalne (Pension Provisions)
+  - key: bs_pension_provisions
+    label: "B.I.2. Rezerwa na świadczenia emerytalne / Pension Provisions"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_I/Pasywa_B_I_2/KwotaA
+    required: false
+
+  # B.I.3. Pozostałe rezerwy (Other Provisions)
+  - key: bs_other_provisions
+    label: "B.I.3. Pozostałe rezerwy / Other Provisions"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_I/Pasywa_B_I_3/KwotaA
+    required: false
+
+  # B.II. Zobowiązania długoterminowe (Long-term Liabilities)
+  - key: bs_lt_liabilities
+    label: "B.II. Zobowiązania długoterminowe / Long-term Liabilities"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_II/KwotaA
+    required: false
+
+  # B.II.1. Wobec jednostek powiązanych (To Related Parties)
+  - key: bs_lt_liabilities_related
+    label: "B.II.1. Wobec jednostek powiązanych / To Related Parties (LT)"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_II/Pasywa_B_II_1/KwotaA
+    required: false
+
+  # B.II.3. Wobec pozostałych jednostek (To Other Entities)
+  - key: bs_lt_liabilities_other
+    label: "B.II.3. Wobec pozostałych jednostek / To Other Entities (LT)"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_II/Pasywa_B_II_3/KwotaA
+    required: false
+
+  # B.III. Zobowiązania krótkoterminowe (Short-term Liabilities)
+  - key: bs_current_liabilities
+    label: "B.III. Zobowiązania krótkoterminowe / Short-term Liabilities"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/KwotaA
+    required: true
+
+  # B.III.1. Zobowiązania wobec jednostek powiązanych (To Related Parties)
+  - key: bs_st_liabilities_related
+    label: "B.III.1. Wobec jednostek powiązanych / To Related Parties (ST)"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_1/KwotaA
+    required: false
+
+  # B.III.2. Zobowiązania wobec pozostałych jednostek, w których jednostka posiada zaangażowanie
+  - key: bs_st_liabilities_associated
+    label: "B.III.2. Wobec jednostek z zaangażowaniem / To Associated Entities (ST)"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_2/KwotaA
+    required: false
+
+  # B.III.3. Zobowiązania wobec pozostałych jednostek (To Other Entities)
+  - key: bs_st_liabilities_other
+    label: "B.III.3. Wobec pozostałych jednostek / To Other Entities (ST)"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_3/KwotaA
+    required: false
+
+  # B.III.3.d. Zobowiązania z tytułu dostaw i usług (Trade Payables)
+  - key: bs_trade_payables
+    label: "B.III.3.d. Zobowiązania z tyt. dostaw i usług / Trade Payables"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_3/Pasywa_B_III_3_D/KwotaA
+    required: false
+
+  # B.III.3.g. Zobowiązania z tytułu podatków (Tax Payables)
+  - key: bs_tax_payables
+    label: "B.III.3.g. Zobowiązania z tyt. podatków / Tax Payables"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_3/Pasywa_B_III_3_G/KwotaA
+    required: false
+
+  # B.III.3.h. Zobowiązania z tytułu wynagrodzeń (Salaries Payable)
+  - key: bs_salaries_payable
+    label: "B.III.3.h. Zobowiązania z tyt. wynagrodzeń / Salaries Payable"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_3/Pasywa_B_III_3_H/KwotaA
+    required: false
+
+  # B.III.4. Fundusze specjalne (Special Funds)
+  - key: bs_special_funds
+    label: "B.III.4. Fundusze specjalne / Special Funds"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_III/Pasywa_B_III_4/KwotaA
+    required: false
+
+  # B.IV. Rozliczenia międzyokresowe (Accruals)
+  - key: bs_accruals
+    label: "B.IV. Rozliczenia międzyokresowe / Accruals"
+    xpaths:
+      - Bilans/Pasywa/Pasywa_B/Pasywa_B_IV/KwotaA
+    required: false
+
+  # ============================================
+  # RACHUNEK ZYSKÓW I STRAT (P&L - Calculation Method)
+  # ============================================
+
+  # A. Przychody netto ze sprzedaży (Net Sales Revenue)
+  - key: pl_revenue
+    label: "A. Przychody netto ze sprzedaży / Net Sales Revenue"
+    xpaths:
+      - RZiS/RZiSKalk/A/KwotaA
+      - RZiS/RZiSPor/A/KwotaA
+    required: true
+
+  # A.J. Przychody ze sprzedaży na eksport (Export Revenue)
+  - key: pl_export_revenue
+    label: "A.J. Przychody ze sprzedaży na eksport / Export Revenue"
+    xpaths:
+      - RZiS/RZiSKalk/A/A_J/KwotaA
+      - RZiS/RZiSPor/A/A_J/KwotaA
+    required: false
+
+  # A.I. Przychody netto ze sprzedaży produktów (Revenue from Products)
+  - key: pl_revenue_products
+    label: "A.I. Przychody ze sprzedaży produktów / Revenue from Products"
+    xpaths:
+      - RZiS/RZiSKalk/A/A_I/KwotaA
+    required: false
+
+  # A.II. Przychody netto ze sprzedaży towarów (Revenue from Goods)
+  - key: pl_revenue_goods
+    label: "A.II. Przychody ze sprzedaży towarów / Revenue from Goods"
+    xpaths:
+      - RZiS/RZiSKalk/A/A_II/KwotaA
+    required: false
+
+  # B. Koszty sprzedanych produktów i towarów (Cost of Sales)
+  - key: pl_cogs
+    label: "B. Koszty sprzedanych produktów i towarów / Cost of Sales"
+    xpaths:
+      - RZiS/RZiSKalk/B/KwotaA
+      - RZiS/RZiSPor/B/KwotaA
+    required: false
+
+  # B.J. Koszty na eksport (Export Costs)
+  - key: pl_export_costs
+    label: "B.J. Koszty na eksport / Export Costs"
+    xpaths:
+      - RZiS/RZiSKalk/B/B_J/KwotaA
+    required: false
+
+  # B.I. Koszt wytworzenia sprzedanych produktów (Cost of Products Sold)
+  - key: pl_cost_products
+    label: "B.I. Koszt wytworzenia sprzedanych produktów / Cost of Products Sold"
+    xpaths:
+      - RZiS/RZiSKalk/B/B_I/KwotaA
+    required: false
+
+  # B.II. Wartość sprzedanych towarów (Cost of Goods Sold)
+  - key: pl_cost_goods
+    label: "B.II. Wartość sprzedanych towarów / Cost of Goods Sold"
+    xpaths:
+      - RZiS/RZiSKalk/B/B_II/KwotaA
+    required: false
+
+  # C. Zysk (strata) brutto ze sprzedaży (Gross Profit)
+  - key: pl_gross_profit
+    label: "C. Zysk (strata) brutto ze sprzedaży / Gross Profit"
+    xpaths:
+      - RZiS/RZiSKalk/C/KwotaA
+      - RZiS/RZiSPor/C/KwotaA
+    required: true
+
+  # D. Koszty sprzedaży (Selling Expenses)
+  - key: pl_selling_expenses
+    label: "D. Koszty sprzedaży / Selling Expenses"
+    xpaths:
+      - RZiS/RZiSKalk/D/KwotaA
+    required: false
+
+  # E. Koszty ogólnego zarządu (Administrative Expenses)
+  - key: pl_admin_expenses
+    label: "E. Koszty ogólnego zarządu / Administrative Expenses"
+    xpaths:
+      - RZiS/RZiSKalk/E/KwotaA
+    required: false
+
+  # F. Zysk (strata) ze sprzedaży (Operating Profit from Sales)
+  - key: pl_operating_profit_sales
+    label: "F. Zysk (strata) ze sprzedaży / Operating Profit from Sales"
+    xpaths:
+      - RZiS/RZiSKalk/F/KwotaA
+      - RZiS/RZiSPor/F/KwotaA
+    required: false
+
+  # G. Pozostałe przychody operacyjne (Other Operating Income)
+  - key: pl_other_operating_income
+    label: "G. Pozostałe przychody operacyjne / Other Operating Income"
+    xpaths:
+      - RZiS/RZiSKalk/G/KwotaA
+      - RZiS/RZiSPor/D/KwotaA
+    required: false
+
+  # G.I. Zysk z tytułu rozchodu niefinansowych aktywów trwałych (Gain on Disposal of Non-financial Assets)
+  - key: pl_gain_disposal_assets
+    label: "G.I. Zysk z rozchodu aktywów trwałych / Gain on Disposal of Assets"
+    xpaths:
+      - RZiS/RZiSKalk/G/G_I/KwotaA
+    required: false
+
+  # G.IV. Inne przychody operacyjne (Other Operating Income - Other)
+  - key: pl_other_op_income_other
+    label: "G.IV. Inne przychody operacyjne / Other Operating Income - Other"
+    xpaths:
+      - RZiS/RZiSKalk/G/G_IV/KwotaA
+    required: false
+
+  # H. Pozostałe koszty operacyjne (Other Operating Expenses)
+  - key: pl_other_operating_expenses
+    label: "H. Pozostałe koszty operacyjne / Other Operating Expenses"
+    xpaths:
+      - RZiS/RZiSKalk/H/KwotaA
+      - RZiS/RZiSPor/E/KwotaA
+    required: false
+
+  # H.III. Inne koszty operacyjne (Other Operating Expenses - Other)
+  - key: pl_other_op_expenses_other
+    label: "H.III. Inne koszty operacyjne / Other Operating Expenses - Other"
+    xpaths:
+      - RZiS/RZiSKalk/H/H_III/KwotaA
+    required: false
+
+  # I. Zysk (strata) z działalności operacyjnej (EBIT)
+  - key: pl_ebit
+    label: "I. Zysk z działalności operacyjnej / EBIT"
+    xpaths:
+      - RZiS/RZiSKalk/I/KwotaA
+      - RZiS/RZiSPor/F/KwotaA
+    required: true
+
+  # J. Przychody finansowe (Financial Income)
+  - key: pl_financial_income
+    label: "J. Przychody finansowe / Financial Income"
+    xpaths:
+      - RZiS/RZiSKalk/J/KwotaA
+      - RZiS/RZiSPor/G/KwotaA
+    required: false
+
+  # J.I. Dywidendy i udziały w zyskach (Dividends)
+  - key: pl_dividend_income
+    label: "J.I. Dywidendy i udziały w zyskach / Dividend Income"
+    xpaths:
+      - RZiS/RZiSKalk/J/J_I/KwotaA
+    required: false
+
+  # J.II. Odsetki (Interest Income)
+  - key: pl_interest_income
+    label: "J.II. Odsetki / Interest Income"
+    xpaths:
+      - RZiS/RZiSKalk/J/J_II/KwotaA
+    required: false
+
+  # J.V. Inne przychody finansowe (Other Financial Income)
+  - key: pl_other_financial_income
+    label: "J.V. Inne przychody finansowe / Other Financial Income"
+    xpaths:
+      - RZiS/RZiSKalk/J/J_V/KwotaA
+    required: false
+
+  # K. Koszty finansowe (Financial Expenses)
+  - key: pl_financial_expenses
+    label: "K. Koszty finansowe / Financial Expenses"
+    xpaths:
+      - RZiS/RZiSKalk/K/KwotaA
+      - RZiS/RZiSPor/H/KwotaA
+    required: false
+
+  # K.I. Odsetki (Interest Expense)
+  - key: pl_interest_expense
+    label: "K.I. Odsetki / Interest Expense"
+    xpaths:
+      - RZiS/RZiSKalk/K/K_I/KwotaA
+      - RZiS/RZiSPor/H/H_I/KwotaA
+    required: false
+
+  # K.IV. Inne koszty finansowe (Other Financial Expenses)
+  - key: pl_other_financial_expenses
+    label: "K.IV. Inne koszty finansowe / Other Financial Expenses"
+    xpaths:
+      - RZiS/RZiSKalk/K/K_IV/KwotaA
+    required: false
+
+  # L. Zysk (strata) brutto (Profit Before Tax)
+  - key: pl_profit_before_tax
+    label: "L. Zysk (strata) brutto / Profit Before Tax"
+    xpaths:
+      - RZiS/RZiSKalk/L/KwotaA
+      - RZiS/RZiSPor/I/KwotaA
+    required: false
+
+  # M. Podatek dochodowy (Income Tax)
+  - key: pl_income_tax
+    label: "M. Podatek dochodowy / Income Tax"
+    xpaths:
+      - RZiS/RZiSKalk/M/KwotaA
+      - RZiS/RZiSPor/J/KwotaA
+    required: false
+
+  # N. Pozostałe obowiązkowe zmniejszenia zysku (Other Mandatory Profit Reductions)
+  - key: pl_other_mandatory_reductions
+    label: "N. Pozostałe obowiązkowe zmniejszenia zysku / Other Mandatory Reductions"
+    xpaths:
+      - RZiS/RZiSKalk/N/KwotaA
+    required: false
+
+  # O. Zysk (strata) netto (Net Profit)
+  - key: pl_net_profit
+    label: "O. Zysk (strata) netto / Net Profit"
+    xpaths:
+      - RZiS/RZiSKalk/O/KwotaA
+      - RZiS/RZiSPor/L/KwotaA
+    required: true
+
+  # ============================================
+  # RACHUNEK PRZEPŁYWÓW PIENIĘŻNYCH (Cash Flow Statement)
+  # ============================================
+
+  # A. Przepływy środków pieniężnych z działalności operacyjnej (Operating Cash Flow)
+  - key: cf_operating
+    label: "A. Przepływy z działalności operacyjnej / Operating Cash Flow"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/A/A_III/KwotaA
+    required: false
+
+  # A.I. Zysk (strata) netto (Net Profit for CF)
+  - key: cf_net_profit
+    label: "A.I. Zysk (strata) netto / Net Profit"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_I/KwotaA
+    required: false
+
+  # A.II. Korekty razem (Total Adjustments)
+  - key: cf_adjustments_total
+    label: "A.II. Korekty razem / Total Adjustments"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/KwotaA
+    required: false
+
+  # A.II.1. Amortyzacja (Depreciation & Amortization)
+  - key: cf_depreciation
+    label: "A.II.1. Amortyzacja / Depreciation & Amortization"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_1/KwotaA
+    required: false
+
+  # A.II.5. Zmiana stanu rezerw (Change in Provisions)
+  - key: cf_change_provisions
+    label: "A.II.5. Zmiana stanu rezerw / Change in Provisions"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_5/KwotaA
+    required: false
+
+  # A.II.6. Zmiana stanu zapasów (Change in Inventory)
+  - key: cf_change_inventory
+    label: "A.II.6. Zmiana stanu zapasów / Change in Inventory"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_6/KwotaA
+    required: false
+
+  # A.II.7. Zmiana stanu należności (Change in Receivables)
+  - key: cf_change_receivables
+    label: "A.II.7. Zmiana stanu należności / Change in Receivables"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_7/KwotaA
+    required: false
+
+  # A.II.8. Zmiana stanu zobowiązań (Change in Payables)
+  - key: cf_change_payables
+    label: "A.II.8. Zmiana stanu zobowiązań / Change in Payables"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_8/KwotaA
+    required: false
+
+  # A.II.9. Zmiana stanu rozliczeń międzyokresowych (Change in Accruals)
+  - key: cf_change_accruals
+    label: "A.II.9. Zmiana stanu rozliczeń międzyokresowych / Change in Accruals"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_9/KwotaA
+    required: false
+
+  # A.II.10. Inne korekty (Other Adjustments)
+  - key: cf_other_adjustments
+    label: "A.II.10. Inne korekty / Other Adjustments"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/A/A_II/A_II_10/KwotaA
+    required: false
+
+  # B. Przepływy środków pieniężnych z działalności inwestycyjnej (Investing Cash Flow)
+  - key: cf_investing
+    label: "B. Przepływy z działalności inwestycyjnej / Investing Cash Flow"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/B/B_III/KwotaA
+    required: false
+
+  # B.I. Wpływy z działalności inwestycyjnej (Investing Inflows)
+  - key: cf_investing_inflows
+    label: "B.I. Wpływy z działalności inwestycyjnej / Investing Inflows"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_I/KwotaA
+    required: false
+
+  # B.I.1. Zbycie wartości niematerialnych i prawnych oraz rzeczowych aktywów trwałych
+  - key: cf_sale_fixed_assets
+    label: "B.I.1. Zbycie wartości niematerialnych i aktywów trwałych / Sale of Fixed Assets"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_I/B_I_1/KwotaA
+    required: false
+
+  # B.II. Wydatki z działalności inwestycyjnej (Investing Outflows)
+  - key: cf_investing_outflows
+    label: "B.II. Wydatki z działalności inwestycyjnej / Investing Outflows"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_II/KwotaA
+    required: false
+
+  # B.II.1. Nabycie wartości niematerialnych i prawnych oraz rzeczowych aktywów trwałych (CapEx)
+  - key: cf_capex
+    label: "B.II.1. Nabycie aktywów trwałych / Capital Expenditure"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/B/B_II/B_II_1/KwotaA
+    required: false
+
+  # C. Przepływy środków pieniężnych z działalności finansowej (Financing Cash Flow)
+  - key: cf_financing
+    label: "C. Przepływy z działalności finansowej / Financing Cash Flow"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_III/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/C/C_III/KwotaA
+    required: false
+
+  # C.I. Wpływy z działalności finansowej (Financing Inflows)
+  - key: cf_financing_inflows
+    label: "C.I. Wpływy z działalności finansowej / Financing Inflows"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_I/KwotaA
+    required: false
+
+  # C.I.2. Kredyty i pożyczki (Loans Received)
+  - key: cf_loans_received
+    label: "C.I.2. Kredyty i pożyczki / Loans Received"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_I/C_I_2/KwotaA
+    required: false
+
+  # C.II. Wydatki z działalności finansowej (Financing Outflows)
+  - key: cf_financing_outflows
+    label: "C.II. Wydatki z działalności finansowej / Financing Outflows"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_II/KwotaA
+    required: false
+
+  # C.II.2. Dywidendy i inne wypłaty na rzecz właścicieli (Dividends Paid)
+  - key: cf_dividends_paid
+    label: "C.II.2. Dywidendy wypłacone / Dividends Paid"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/C/C_II/C_II_2/KwotaA
+    required: false
+
+  # D. Przepływy pieniężne netto razem (Net Cash Flow)
+  - key: cf_net_change
+    label: "D. Przepływy pieniężne netto razem / Net Cash Flow"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/D/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/D/KwotaA
+    required: false
+
+  # E. Bilansowa zmiana stanu środków pieniężnych (Balance Sheet Change in Cash)
+  - key: cf_balance_change
+    label: "E. Bilansowa zmiana stanu środków pieniężnych / Balance Sheet Change in Cash"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/E/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/E/KwotaA
+    required: false
+
+  # F. Środki pieniężne na początek okresu (Opening Cash Balance)
+  - key: cf_opening_cash
+    label: "F. Środki pieniężne na początek okresu / Opening Cash Balance"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/F/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/F/KwotaA
+    required: false
+
+  # G. Środki pieniężne na koniec okresu (Closing Cash Balance)
+  - key: cf_closing_cash
+    label: "G. Środki pieniężne na koniec okresu / Closing Cash Balance"
+    xpaths:
+      - RachPrzeplywow/PrzeplywyPosr/G/KwotaA
+      - RachPrzeplywow/PrzeplywyBezp/G/KwotaA
+    required: false

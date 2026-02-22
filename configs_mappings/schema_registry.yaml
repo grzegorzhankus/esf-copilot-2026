@@ -1,0 +1,31 @@
+# Registry of XML Schema files (XSD) and their namespaces
+# This file maps namespace URIs to their corresponding XSD schema files
+
+schemas:
+  - namespace: "http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaInnaWTysiacach"
+    xsd_file: "JednostkaInnaWTysiacach(1)_v1-3.xsd"
+    description: "Jednostka Inna w Tysiącach - Standard financial statement for other entities (amounts in thousands PLN)"
+    entity_type: "JednostkaInna"
+    unit: "thousands"
+    version: "v1-3"
+
+  - namespace: "http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaInnaWZlotych"
+    xsd_file: "JednostkaInnaWZlotych(1)_v1-3.xsd"
+    description: "Jednostka Inna w Złotych - Standard financial statement for other entities (amounts in PLN)"
+    entity_type: "JednostkaInna"
+    unit: "zlotych"
+    version: "v1-3"
+
+  - namespace: "http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaMalaWTysiacach"
+    xsd_file: "JednostkaMalaWTysiacach(1)_v1-3.xsd"
+    description: "Jednostka Mała w Tysiącach - Small entity financial statement (amounts in thousands PLN)"
+    entity_type: "JednostkaMala"
+    unit: "thousands"
+    version: "v1-3"
+
+  - namespace: "http://www.mf.gov.pl/schematy/SF/DefinicjeTypySprawozdaniaFinansowe/2025/01/01/JednostkaMalaWZlotych"
+    xsd_file: "JednostkaMalaWZlotych(1)_v1-3.xsd"
+    description: "Jednostka Mała w Złotych - Small entity financial statement (amounts in PLN)"
+    entity_type: "JednostkaMala"
+    unit: "zlotych"
+    version: "v1-3"
