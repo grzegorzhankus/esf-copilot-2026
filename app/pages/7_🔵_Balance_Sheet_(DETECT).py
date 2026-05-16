@@ -17,6 +17,7 @@ from core.formatting import pl_number_str, unit_suffix, scale_for_display
 from core.i18n import t
 from core.analysis_file_selector import render_analysis_file_selector
 from core.language_selector import render_language_selector
+from core.modes import render_mode_header
 from core.components import render_nvidia_badge
 
 st.set_page_config(
@@ -46,6 +47,7 @@ def _format_change(current: float, prior: float) -> str:
 def main():
     # Render language selector and get current language
     lang = render_language_selector()
+    render_mode_header("DETECT", lang)
 
     st.title(f"📙 {t('balance_sheet_title', lang)}")
     st.markdown(f"**{t('balance_sheet_subtitle', lang)}**")

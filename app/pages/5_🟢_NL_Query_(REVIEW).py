@@ -18,6 +18,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from core.i18n import t
 from core.language_selector import render_language_selector
+from core.modes import render_mode_header
 from core.nl_query_engine import NLQueryEngine, create_query_engine
 from core.components import render_nvidia_badge, render_llm_badge
 
@@ -31,6 +32,7 @@ st.set_page_config(
 
 # Render language selector and get current language
 lang = render_language_selector()
+render_mode_header("REVIEW", lang)
 
 # Page title
 if lang == "PL":

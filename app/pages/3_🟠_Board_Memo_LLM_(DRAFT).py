@@ -13,6 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 import streamlit as st
 from core.i18n import t
 from core.language_selector import render_language_selector
+from core.modes import render_mode_header
 from core.components import render_nvidia_badge, render_llm_badge
 
 # Try to import advanced LLM client first, fall back to basic Ollama
@@ -57,6 +58,7 @@ def get_llm_backend_info():
 def main():
     # Render language selector and get current language
     lang = render_language_selector()
+    render_mode_header("DRAFT", lang)
 
     st.title(f"🧾 {t('board_memo_title', lang)}")
 
