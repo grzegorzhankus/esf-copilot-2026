@@ -13,7 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from core.contracts import AnalysisResult
 from core.i18n import t
 from core.language_selector import render_language_selector
-from core.modes import render_mode_header
+from core.modes import apply_mode
 from core.llm_advanced import (
     AdvancedLLMClient,
     LLMBackend,
@@ -25,7 +25,7 @@ st.set_page_config(page_title="CFO Chat (LLM) - AI CFO Dashboard", layout="wide"
 
 # Render language selector and get current language
 lang = render_language_selector()
-render_mode_header("REVIEW", lang)
+apply_mode("REVIEW", lang)
 
 st.title(f"💬 {t('cfo_chat_title', lang)}")
 

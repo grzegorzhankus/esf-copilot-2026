@@ -24,7 +24,7 @@ from core.excel_export import export_to_excel
 from core.formatting import money_fmt
 from core.i18n import t
 from core.language_selector import render_language_selector
-from core.modes import render_mode_header
+from core.modes import apply_mode
 from core.pdf_export import export_to_pdf
 from core.xml_loader import XmlParseError
 from core.components import render_nvidia_badge
@@ -35,7 +35,7 @@ st.set_page_config(page_title="XML Analysis - AI CFO Dashboard", layout="wide", 
 
 # Render language selector and get current language
 lang = render_language_selector()
-render_mode_header("DETECT", lang)
+apply_mode("DETECT", lang)
 
 # ============== SIDEBAR - File Upload ==============
 with st.sidebar:
