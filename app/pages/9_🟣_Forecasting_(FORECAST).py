@@ -15,12 +15,14 @@ if str(PROJECT_ROOT) not in sys.path:
 from core.forecasting import simple_linear_forecast, scenario_analysis, get_forecast_summary
 from core.i18n import t
 from core.language_selector import render_language_selector
+from core.modes import apply_mode
 from core.components import render_nvidia_badge
 
 st.set_page_config(page_title="Forecasting - AI CFO Dashboard", layout="wide", page_icon="📈")
 
 # Render language selector and get current language
 lang = render_language_selector()
+apply_mode("FORECAST", lang)
 
 st.title(f"📈 {t('forecasting_title', lang)}")
 st.write(t("forecasting_subtitle", lang))

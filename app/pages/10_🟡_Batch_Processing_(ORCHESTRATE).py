@@ -21,6 +21,7 @@ from core.analysis_pipeline import analyze_xml_bytes
 from core.excel_export import export_to_excel
 from core.i18n import t
 from core.language_selector import render_language_selector
+from core.modes import apply_mode
 from core.xml_loader import XmlParseError
 from core.gpu_batch_processor import (
     GPUBatchProcessor,
@@ -36,6 +37,7 @@ st.set_page_config(page_title="Batch Processing - AI CFO Dashboard", layout="wid
 
 # Render language selector and get current language
 lang = render_language_selector()
+apply_mode("ORCHESTRATE", lang)
 
 st.title(f"📦 {t('batch_processing_title', lang)}")
 st.write(t("batch_upload_instruction", lang))
